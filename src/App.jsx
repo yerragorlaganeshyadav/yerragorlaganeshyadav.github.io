@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.css";
-import Portfolio from "./components/Profile";
+import Portfolio from "./components/Portfolio";
 
 const App = () => {
   return (
-    <div>
+    <div className="w-screen h-screen">
       <Portfolio />
     </div>
   );

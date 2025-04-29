@@ -8,7 +8,7 @@ const Portfolio = () => {
       <header className="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-6 shadow-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-4">
           <h1 className="text-3xl font-bold">Yerragorla Ganesh Yadav</h1>
-          <nav className="space-x-6 text-lg">
+          <nav className="space-x-6 flex flex-wrap justify-between text-lg">
             <a href="#about" className="hover:text-blue-300">
               About
             </a>
