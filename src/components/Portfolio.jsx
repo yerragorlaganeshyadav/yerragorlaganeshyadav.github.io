@@ -7,8 +7,12 @@ const skills = [
   "Java",
   "Spring Boot",
   "Microservice",
+  "Hibernate",
+  "Kafka",
   "SQL/NOSQL",
+  "JavaScript",
   "React JS",
+  "TailwindCSS",
   "Flutter",
 ];
 const services = [
@@ -178,7 +182,7 @@ const Portfolio = () => (
       </div>
       <a
         class="text-blue-800 underline"
-        href="mailto:ganeshyadav.freelancer@gmailo.com"
+        href="mailto:ganeshyadav.freelancer@gmail.com"
       >
         <p>ganeshyadav.freelancer@gmail.com</p>
       </a>
