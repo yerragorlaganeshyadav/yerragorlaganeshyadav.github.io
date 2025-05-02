@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
-import image from "../../public/Freelancer.jpg";
-import resume from "../../public/Ganesh Yadav_Yerragorla_Java developer.pdf";
+import image from "/Freelancer.jpg";
+import resume from "/Ganesh Yadav_Yerragorla_Java developer.pdf";
 
 const skills = [
   "Java",
@@ -33,17 +33,12 @@ const projects = [
   {
     title: "Food Delivery App",
     desc: "A web app for ordering food online",
-    stack: "React • Spring Boot",
+    stack: "React JS• Java •  Spring Boot",
   },
   {
-    title: "Exam Prep Platform",
+    title: "Nissigate",
     desc: "A mobile app for exam preparation",
-    stack: "Flutter • AWS",
-  },
-  {
-    title: "Traffic Monitoring System",
-    desc: "A system for monitoring traffic flow",
-    stack: "",
+    stack: "React JS • AWS",
   },
 ];
 
@@ -88,7 +83,7 @@ const Portfolio = () => (
 
     {/* About Me */}
     <section className="max-w-4xl mx-auto mt-12 px-6 flex items-center gap-8">
-      <div className="w-20 h-25 md:w-28 md:h-28 rounded-full bg-gray-800 flex items-center justify-center shadow-lg sm:ml-[2%] md:-ml-[5%] md: mt-2">
+      <div className="w-25 h-25 md:w-28 md:h-28 rounded-full bg-gray-800 flex items-center justify-center shadow-lg sm:ml-[2%] md:-ml-[5%] md: mt-2">
         <img
           src={image}
           className="w-full h-full object-cover object-top rounded-full"
@@ -197,8 +192,7 @@ const Portfolio = () => (
     {/* Footer */}
     <footer className="mt-16 bg-[#181c2a] text-gray-400 py-6 text-center">
       <p className="text-sm">
-        © {new Date().getFullYear()} Yerragorla Ganesh Yadav. Built with React
-        and Vite.
+        © {new Date().getFullYear()} Yerragorla Ganesh Yadav.
       </p>
     </footer>
   </div>

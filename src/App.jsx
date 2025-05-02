@@ -4,7 +4,7 @@ import Portfolio from "./components/Portfolio";
 
 const App = () => {
   return (
-    <div className="w-screen">
+    <div className="w-full">
       <Portfolio />
     </div>
   );
