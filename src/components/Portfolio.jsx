@@ -2,6 +2,7 @@ import React from "react";
 import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import image from "/Freelancer.jpg";
 import resume from "/Ganesh Yadav_Yerragorla_Java developer.pdf";
+import FreelanceVideo from "/FreelancerVideo.mp4";
 
 const skills = [
   "Java",
@@ -73,7 +74,7 @@ const Portfolio = () => (
           </a>
         </div>
       </div>
-      <div className="w-32 h-32 md:w-44 md:h-44 rounded-full flex items-center justify-center shadow-lg mt-8 md:mt-0 md:mr-[25%]">
+      <div className="w-32 h-32 md:w-44 md:h-44 rounded-full flex items-center justify-center shadow-lg mt-8 md:mt-0 md:mr-[50%]">
         <img
           src={image}
           className="w-full h-full object-cover object-top rounded-full"
@@ -82,13 +83,7 @@ const Portfolio = () => (
     </header>
 
     {/* About Me */}
-    <section className="max-w-4xl mx-auto mt-12 px-6 flex items-center gap-8">
-      <div className="w-25 h-25 md:w-28 md:h-28 rounded-full bg-gray-800 flex items-center justify-center shadow-lg sm:ml-[2%] md:-ml-[5%] md: mt-2">
-        <img
-          src={image}
-          className="w-full h-full object-cover object-top rounded-full"
-        />
-      </div>
+    <section className="max-w-6xl mx-auto py-8 px-6 flex flex-col gap-5 md:flex-row md:gap-3 justify-between items-center ">
       <div>
         <h2 className="text-2xl font-semibold mb-2">About Me</h2>
         <p className="text-gray-300 mb-4">
@@ -113,10 +108,20 @@ const Portfolio = () => (
           Download Resume
         </a>
       </div>
+      <div className="w-full h-full md:w-[250px] md:h-44 overflow-hidden shadow-lg">
+        <video
+          src={FreelanceVideo}
+          controls
+          loop
+          playsInline
+          muted
+          className="w-full h-full object-cover"
+        />
+      </div>
     </section>
 
     {/* Services */}
-    <section className="max-w-5xl mx-auto mt-16 px-6">
+    <section className="max-w-5xl mx-auto mt-5 px-6">
       <h2 className="text-2xl font-semibold mb-6">Services</h2>
       <div className="grid sm:grid-cols-3 gap-6">
         {services.map((s) => (
