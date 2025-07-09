@@ -14,7 +14,7 @@ const skills = [
   "JavaScript",
   "React JS",
   "TailwindCSS",
-  "Flutter",
+  "AWS",
 ];
 const services = [
   {
