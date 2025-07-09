@@ -19,11 +19,7 @@ const skills = [
 const services = [
   {
     title: "Web Development",
-    desc: "Creating responsive and dynamic websites.",
-  },
-  {
-    title: "Mobile App Development",
-    desc: "Building high-quality mobile applications.",
+    desc: "Creating responsive, static and dynamic websites.",
   },
   {
     title: "UI/UX Design",
@@ -35,11 +31,13 @@ const projects = [
     title: "Food Delivery App",
     desc: "A web application for cloud kitchen, where customers can place orders, and also we have catering option and we serve for all types of functions",
     stack: "React JS• Java •  Spring Boot",
+    link: "",
   },
   {
     title: "Nissigate",
     desc: "A website related to agriculture, where farmers can sell their products and consumers can buy here with affordable prices",
     stack: "React JS • AWS",
+    link: "https://nissigate.com/",
   },
 ];
 
@@ -148,6 +146,16 @@ const Portfolio = () => (
             <h3 className="text-lg font-semibold mb-2">{proj.title}</h3>
             <p className="text-gray-400 mb-2">{proj.desc}</p>
             <p className="text-blue-400 text-sm">{proj.stack}</p>
+            {proj.link && (
+              <a
+                href={proj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-300 underline text-sm"
+              >
+                Visit website
+              </a>
+            )}
           </div>
         ))}
       </div>
