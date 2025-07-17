@@ -180,7 +180,7 @@ const Portfolio = () => (
           <FaEnvelope />
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/yerragorlaganeshyadav"
           target="_blank"
           rel="noreferrer"
           className="hover:text-blue-400"
