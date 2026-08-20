@@ -6,7 +6,7 @@
   "homepage": "https://yerragorlaganeshyadav.github.io",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && mkdir -p \"dist/Ganesh&Deepika\" \"dist/Ganesh%26Deepika\" && cp dist/index.html \"dist/Ganesh&Deepika/index.html\" && cp dist/index.html \"dist/Ganesh%26Deepika/index.html\" && cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
