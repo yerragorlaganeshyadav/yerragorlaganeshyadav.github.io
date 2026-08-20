@@ -3,14 +3,15 @@ import {
   FaHeart,
   FaMapMarkerAlt,
   FaGlassCheers,
-  FaEnvelope,
   FaCalendarAlt,
   FaGlobe,
   FaTimes,
   FaDirections,
   FaChevronUp,
   FaPhoneAlt,
-  FaCheckCircle
+  FaClock,
+  FaCalendarCheck,
+  FaEnvelope
 } from "react-icons/fa";
 import { translations } from "./GaneshDeepika/translations";
 
@@ -20,20 +21,11 @@ const GaneshDeepikaWedding = () => {
   const [showSaveDateModal, setShowSaveDateModal] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  
-  // RSVP Form state
-  const [rsvpForm, setRsvpForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    attending: "accept"
-  });
-  const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
 
   const t = translations[lang];
 
-  // Countdown timer to Muhurtham (Aug 23, 2026)
-  const targetDate = new Date("2026-08-23T09:00:00+05:30").getTime();
+  // Countdown timer to Muhurtham (Aug 23, 2026, 08:15 AM IST)
+  const targetDate = new Date("2026-08-23T08:15:00+05:30").getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -63,23 +55,13 @@ const GaneshDeepikaWedding = () => {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const handleRsvpSubmit = (e) => {
-    e.preventDefault();
-    if (!rsvpForm.firstName || !rsvpForm.lastName) return;
-    setRsvpSubmitted(true);
-    setTimeout(() => {
-      setRsvpSubmitted(false);
-      setRsvpForm({ firstName: "", lastName: "", email: "", attending: "accept" });
-    }, 6000);
-  };
-
   const toggleLanguage = () => {
     setLang((prev) => (prev === "te" ? "en" : "te"));
   };
 
   const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
     "Ganesh & Deepika Wedding (కళ్యాణ మహోత్సవం)"
-  )}&dates=20260823T033000Z/20260823T073000Z&details=${encodeURIComponent(
+  )}&dates=20260823T024500Z/20260823T073000Z&details=${encodeURIComponent(
     "Join us to celebrate the wedding of Ganesh & Deepika at PGR Function Hall, Pamidi!"
   )}&location=${encodeURIComponent(
     "PGR Function Hall, Bypass Link Road, Pamidi, Anantapur, Andhra Pradesh"
@@ -128,9 +110,6 @@ const GaneshDeepikaWedding = () => {
             </a>
             <a href="#venue" className="hover:text-[#B8860B] transition">
               {t.location}
-            </a>
-            <a href="#rsvp" className="hover:text-[#B8860B] transition">
-              {t.rsvp}
             </a>
           </nav>
 
@@ -199,10 +178,10 @@ const GaneshDeepikaWedding = () => {
               {t.events}
             </a>
             <a
-              href="#rsvp"
+              href="#venue"
               className="border-2 border-[#4A0E17] text-[#4A0E17] hover:bg-[#4A0E17] hover:text-white font-sans text-sm font-semibold px-6 py-3 rounded-lg transition"
             >
-              {t.rsvpTitle}
+              {t.location}
             </a>
           </div>
         </div>
@@ -230,7 +209,7 @@ const GaneshDeepikaWedding = () => {
         </div>
       </section>
 
-      {/* Event Schedule Section */}
+      {/* Event Schedule & Timings Section */}
       <section id="events" className="py-20 px-4 bg-pattern relative">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl sm:text-5xl font-bold font-brand text-[#4A0E17] mb-4">
@@ -240,17 +219,24 @@ const GaneshDeepikaWedding = () => {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Event 1: Reception */}
-            <div className="bg-white/90 backdrop-blur p-8 rounded-2xl shadow-lg border border-[#E6C280]/40 flex flex-col justify-between hover:border-[#D4AF37] transition group">
+            <div className="bg-white/90 backdrop-blur p-8 rounded-2xl shadow-lg border border-[#E6C280]/40 flex flex-col justify-between hover:border-[#D4AF37] transition group text-left">
               <div>
-                <div className="w-14 h-14 bg-[#FAF7F2] text-[#4A0E17] border border-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#4A0E17] group-hover:text-white transition">
+                <div className="w-14 h-14 bg-[#FAF7F2] text-[#4A0E17] border border-[#D4AF37] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#4A0E17] group-hover:text-white transition">
                   <FaGlassCheers className="text-2xl" />
                 </div>
                 <h3 className="text-2xl font-bold font-brand text-[#4A0E17] mb-2">
                   {t.receptionTitle}
                 </h3>
-                <span className="inline-block text-base font-semibold text-[#B8860B] mb-4">
-                  {t.receptionDate}
-                </span>
+                <div className="space-y-1 mb-4">
+                  <div className="flex items-center gap-2 text-sm font-bold text-[#B8860B]">
+                    <FaCalendarCheck />
+                    <span>{t.receptionDate}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-base font-extrabold text-[#8B0000]">
+                    <FaClock className="text-[#D4AF37]" />
+                    <span>{t.receptionTime}</span>
+                  </div>
+                </div>
                 <p className="text-sm sm:text-base font-wedding text-[#5C121D] leading-relaxed">
                   {t.receptionDesc}
                 </p>
@@ -258,17 +244,24 @@ const GaneshDeepikaWedding = () => {
             </div>
 
             {/* Event 2: The Knot (Muhurtham) */}
-            <div className="bg-white/90 backdrop-blur p-8 rounded-2xl shadow-lg border border-[#E6C280]/40 flex flex-col justify-between hover:border-[#D4AF37] transition group">
+            <div className="bg-white/90 backdrop-blur p-8 rounded-2xl shadow-lg border border-[#E6C280]/40 flex flex-col justify-between hover:border-[#D4AF37] transition group text-left">
               <div>
-                <div className="w-14 h-14 bg-[#FAF7F2] text-[#4A0E17] border border-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-[#4A0E17] group-hover:text-white transition">
+                <div className="w-14 h-14 bg-[#FAF7F2] text-[#4A0E17] border border-[#D4AF37] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#4A0E17] group-hover:text-white transition">
                   <FaHeart className="text-2xl text-[#8B0000]" />
                 </div>
                 <h3 className="text-2xl font-bold font-brand text-[#4A0E17] mb-2">
                   {t.knotTitle}
                 </h3>
-                <span className="inline-block text-base font-semibold text-[#B8860B] mb-4">
-                  {t.knotDate}
-                </span>
+                <div className="space-y-1 mb-4">
+                  <div className="flex items-center gap-2 text-sm font-bold text-[#B8860B]">
+                    <FaCalendarCheck />
+                    <span>{t.knotDate}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-base font-extrabold text-[#8B0000]">
+                    <FaClock className="text-[#D4AF37]" />
+                    <span>{t.knotTime}</span>
+                  </div>
+                </div>
                 <p className="text-sm sm:text-base font-wedding text-[#5C121D] leading-relaxed">
                   {t.knotDesc}
                 </p>
@@ -357,121 +350,90 @@ const GaneshDeepikaWedding = () => {
         </div>
       </section>
 
-      {/* RSVP Section */}
-      <section id="rsvp" className="py-20 px-4 bg-pattern">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-5xl font-bold font-brand text-[#4A0E17] mb-2">
-            {t.rsvpTitle}
-          </h2>
-          <p className="text-base font-wedding text-[#5C121D] mb-8">
-            {t.rsvpSubtitle}
-          </p>
-
-          {/* RSVP Card with Envelope Icon */}
-          <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-2xl border border-[#E6C280]/50 relative text-left">
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#4A0E17] text-white rounded-full flex items-center justify-center shadow-lg border-2 border-[#D4AF37]">
-              <FaEnvelope className="text-xl" />
+      {/* Event Timings Summary Highlight Card (Replaces RSVP) */}
+      <section className="py-16 px-4 bg-pattern">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl border-2 border-[#D4AF37] relative">
+            <div className="w-14 h-14 bg-[#4A0E17] text-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#D4AF37]">
+              <FaClock className="text-2xl" />
             </div>
 
-            {rsvpSubmitted ? (
-              <div className="py-12 text-center space-y-4">
-                <FaCheckCircle className="text-5xl text-emerald-600 mx-auto animate-bounce" />
-                <h4 className="text-2xl font-bold font-brand text-[#4A0E17]">
-                  {t.successMsg}
-                </h4>
+            <h3 className="text-2xl sm:text-3xl font-bold font-brand text-[#4A0E17] mb-2">
+              {t.eventTimingsCardTitle}
+            </h3>
+            <p className="text-sm sm:text-base font-wedding text-[#5C121D] mb-8">
+              {t.eventTimingsCardSubtitle}
+            </p>
+
+            {/* Event Timings Table/Card Grid */}
+            <div className="grid sm:grid-cols-2 gap-6 text-left mb-8">
+              <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#E6C280]/60 space-y-2">
+                <div className="text-xs uppercase font-sans font-bold tracking-wider text-[#B8860B]">
+                  Day 1 • రిసెప్షన్ (วิందు)
+                </div>
+                <div className="text-lg font-bold font-brand text-[#4A0E17]">
+                  {t.receptionDate}
+                </div>
+                <div className="flex items-center gap-2 text-base font-extrabold text-[#8B0000]">
+                  <FaClock className="text-[#D4AF37]" />
+                  <span>{t.receptionTime}</span>
+                </div>
               </div>
-            ) : (
-              <form onSubmit={handleRsvpSubmit} className="space-y-6 mt-4">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-sans font-semibold text-gray-600 uppercase tracking-wider mb-2">
-                      {t.firstName}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={rsvpForm.firstName}
-                      onChange={(e) =>
-                        setRsvpForm({ ...rsvpForm, firstName: e.target.value })
-                      }
-                      className="w-full px-4 py-3 rounded-lg bg-[#FAF7F2] border border-gray-200 focus:outline-none focus:border-[#4A0E17] font-sans text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-sans font-semibold text-gray-600 uppercase tracking-wider mb-2">
-                      {t.lastName}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={rsvpForm.lastName}
-                      onChange={(e) =>
-                        setRsvpForm({ ...rsvpForm, lastName: e.target.value })
-                      }
-                      className="w-full px-4 py-3 rounded-lg bg-[#FAF7F2] border border-gray-200 focus:outline-none focus:border-[#4A0E17] font-sans text-sm"
-                    />
-                  </div>
-                </div>
 
+              <div className="bg-[#FAF7F2] p-6 rounded-2xl border border-[#E6C280]/60 space-y-2">
+                <div className="text-xs uppercase font-sans font-bold tracking-wider text-[#B8860B]">
+                  Day 2 • సుముహూర్తం (కళ్యాణం)
+                </div>
+                <div className="text-lg font-bold font-brand text-[#4A0E17]">
+                  {t.knotDate}
+                </div>
+                <div className="flex items-center gap-2 text-base font-extrabold text-[#8B0000]">
+                  <FaClock className="text-[#D4AF37]" />
+                  <span>{t.knotTime}</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Countdown Display */}
+            <div className="bg-[#4A0E17] text-white p-6 rounded-2xl shadow-inner">
+              <div className="text-xs font-sans uppercase tracking-widest text-[#D4AF37] mb-3">
+                కళ్యాణ సుముహూర్తానికి మిగిలిన సమయం
+              </div>
+              <div className="grid grid-cols-4 gap-2 text-center">
                 <div>
-                  <label className="block text-xs font-sans font-semibold text-gray-600 uppercase tracking-wider mb-2">
-                    {t.email}
-                  </label>
-                  <input
-                    type="text"
-                    value={rsvpForm.email}
-                    onChange={(e) =>
-                      setRsvpForm({ ...rsvpForm, email: e.target.value })
-                    }
-                    className="w-full px-4 py-3 rounded-lg bg-[#FAF7F2] border border-gray-200 focus:outline-none focus:border-[#4A0E17] font-sans text-sm"
-                  />
+                  <span className="block text-2xl sm:text-3xl font-bold font-brand text-[#FAF7F2]">
+                    {timeLeft.days}
+                  </span>
+                  <span className="text-[10px] uppercase text-[#D4AF37]">
+                    {t.days}
+                  </span>
                 </div>
-
                 <div>
-                  <label className="block text-xs font-sans font-semibold text-gray-600 uppercase tracking-wider mb-3">
-                    {t.attendingQuestion}
-                  </label>
-                  <div className="flex gap-6">
-                    <label className="flex items-center gap-2 cursor-pointer font-wedding text-sm sm:text-base">
-                      <input
-                        type="radio"
-                        name="attending"
-                        value="accept"
-                        checked={rsvpForm.attending === "accept"}
-                        onChange={() =>
-                          setRsvpForm({ ...rsvpForm, attending: "accept" })
-                        }
-                        className="accent-[#4A0E17]"
-                      />
-                      <span>{t.accept}</span>
-                    </label>
-
-                    <label className="flex items-center gap-2 cursor-pointer font-wedding text-sm sm:text-base">
-                      <input
-                        type="radio"
-                        name="attending"
-                        value="decline"
-                        checked={rsvpForm.attending === "decline"}
-                        onChange={() =>
-                          setRsvpForm({ ...rsvpForm, attending: "decline" })
-                        }
-                        className="accent-[#4A0E17]"
-                      />
-                      <span>{t.decline}</span>
-                    </label>
-                  </div>
+                  <span className="block text-2xl sm:text-3xl font-bold font-brand text-[#FAF7F2]">
+                    {timeLeft.hours}
+                  </span>
+                  <span className="text-[10px] uppercase text-[#D4AF37]">
+                    {t.hours}
+                  </span>
                 </div>
-
-                <div className="text-center pt-4">
-                  <button
-                    type="submit"
-                    className="w-full sm:w-auto bg-[#4A0E17] hover:bg-[#6b1422] text-white font-sans font-semibold text-sm px-8 py-3 rounded-xl shadow-lg transition duration-200"
-                  >
-                    {t.submitBtn}
-                  </button>
+                <div>
+                  <span className="block text-2xl sm:text-3xl font-bold font-brand text-[#FAF7F2]">
+                    {timeLeft.mins}
+                  </span>
+                  <span className="text-[10px] uppercase text-[#D4AF37]">
+                    {t.mins}
+                  </span>
                 </div>
-              </form>
-            )}
+                <div>
+                  <span className="block text-2xl sm:text-3xl font-bold font-brand text-[#FAF7F2]">
+                    {timeLeft.secs}
+                  </span>
+                  <span className="text-[10px] uppercase text-[#D4AF37]">
+                    {t.secs}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -636,7 +598,7 @@ const GaneshDeepikaWedding = () => {
               {t.privacyPolicy}
             </h3>
             <p className="text-sm font-wedding text-gray-700 leading-relaxed">
-              We respect your privacy. Any RSVP details submitted on this website are exclusively used for managing guest attendance and dinner arrangements for the Ganesh & Deepika wedding celebration.
+              We respect your privacy. Any inquiries or messages sent regarding the Ganesh & Deepika wedding celebration are handled with care and confidentiality.
             </p>
             <button
               onClick={() => setShowPrivacyModal(false)}
