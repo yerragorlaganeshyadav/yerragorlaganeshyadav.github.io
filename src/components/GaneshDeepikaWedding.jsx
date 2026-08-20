@@ -24,7 +24,7 @@ const GaneshDeepikaWedding = () => {
 
   const t = translations[lang];
 
-  // Countdown timer to Muhurtham (Aug 23, 2026, 08:15 AM IST)
+  // Countdown timer to Muhurtham (Aug 23, 2026, o4:30 AM IST)
   const targetDate = new Date("2026-08-23T04:30:00+05:30").getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
