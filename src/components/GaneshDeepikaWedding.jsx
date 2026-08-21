@@ -22,6 +22,10 @@ const GaneshDeepikaWedding = () => {
   const [showContactModal, setShowContactModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   const t = translations[lang];
 
   // Countdown timer to Muhurtham (Aug 23, 2026, 08:15 AM IST)
