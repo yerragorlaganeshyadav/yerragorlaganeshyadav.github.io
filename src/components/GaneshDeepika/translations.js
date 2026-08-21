@@ -8,18 +8,22 @@ export const translations = {
     saveTheDate: "తేదీని గుర్తుంచుకోండి",
     badge: "ఆగస్టు 22 & 23, 2026",
     coupleNames: "గణేష్ & దీపిక",
-    invitationText: "మా పెద్దల ఆశీస్సులతో మరియు ఆ సర్వేశ్వరుని అనంత కృపతో, గణేష్ మరియు దీపికల పవిత్ర పరిణయ మహోత్సవానికి మిమ్మల్ని కుటుంబసమేతంగా సాదరంగా ఆహ్వానిస్తున్నాము.",
+    invitationText:
+      "మా పెద్దల ఆశీస్సులతో మరియు ఆ సర్వేశ్వరుని అనంత కృపతో, గణేష్ మరియు దీపికల పవిత్ర పరిణయ మహోత్సవానికి మిమ్మల్ని కుటుంబసమేతంగా సాదరంగా ఆహ్వానిస్తున్నాము.",
     eventScheduleTitle: "కార్యక్రమాల సమయాలు & వివరాలు",
     receptionTitle: "విందు (రిసెప్షన్)",
     receptionDate: "శనివారం, ఆగస్టు 22, 2026",
     receptionTime: "సాయంత్రం 7:00 గంటల నుండి",
-    receptionDesc: "సంతోషభరితమైన సంగీతం, నృత్యం మరియు విందు వేడుకలలో పాల్గొని మా ఈ సంతోష ఘడియలను మరింత ప్రత్యేకంగా మార్చాల్సిందిగా కోరుచున్నాము.",
+    receptionDesc:
+      "సంతోషభరితమైన సంగీతం, నృత్యం మరియు విందు వేడుకలలో పాల్గొని మా ఈ సంతోష ఘడియలను మరింత ప్రత్యేకంగా మార్చాల్సిందిగా కోరుచున్నాము.",
     knotTitle: "సుముహూర్తం (కళ్యాణం)",
     knotDate: "ఆదివారం, ఆగస్టు 23, 2026",
-    knotTime: "ఉదయం 8:15 గంటలకు సుముహూర్తం",
-    knotDesc: "నూతన జీవితంలోకి అడుగుపెడుతున్న గణేష్ & దీపికల పవిత్ర పరిణయ బంధాన్ని తిలకించి, దంపతులను మనసారా ఆశీర్వదించగలరు.",
+    knotTime: "ఉదయం 4:30 గంటలకు సుముహూర్తం",
+    knotDesc:
+      "నూతన జీవితంలోకి అడుగుపెడుతున్న గణేష్ & దీపికల పవిత్ర పరిణయ బంధాన్ని తిలకించి, దంపతులను మనసారా ఆశీర్వదించగలరు.",
     venueTitle: "కళ్యాణ వేదిక",
-    venueSubtitle: "ఈ పవిత్రమైన ప్రదేశంలో మీతో కలిసి వేడుక జరుపుకోవడానికి మేము ఎంతగానో ఎదురుచూస్తున్నాము.",
+    venueSubtitle:
+      "ఈ పవిత్రమైన ప్రదేశంలో మీతో కలిసి వేడుక జరుపుకోవడానికి మేము ఎంతగానో ఎదురుచూస్తున్నాము.",
     venueName: "పి.జి.ఆర్ ఫంక్షన్ హాల్",
     venueAddress: "బైపాస్ లింక్ రోడ్, పామిడి, అనంతపురం జిల్లా, ఆంధ్రప్రదేశ్",
     getDirections: "దారికై ఇక్కడ నొక్కండి",
@@ -37,7 +41,8 @@ export const translations = {
     ghibliBadge: "పరిణయ దివ్య క్షణాలు",
     ghibliCaption: "గణేష్ & దీపిక - కళ్యాణ వైభవం",
     eventTimingsCardTitle: "కార్యక్రమ ప్రారంభ సమయపట్టిక",
-    eventTimingsCardSubtitle: "దయచేసి సమయానికి విచ్చేసి శుభకార్యాన్ని జయప్రదం చేయగలరు"
+    eventTimingsCardSubtitle:
+      "దయచేసి సమయానికి విచ్చేసి శుభకార్యాన్ని జయప్రదం చేయగలరు",
   },
   en: {
     brand: "G&D Wedding",
@@ -48,18 +53,22 @@ export const translations = {
     saveTheDate: "Save the Date",
     badge: "SAVE THE DATE",
     coupleNames: "Ganesh & Deepika",
-    invitationText: "With the blessings of our elders and the grace of the Almighty, we cordially invite you to celebrate the union of Ganesh and Deepika.",
+    invitationText:
+      "With the blessings of our elders and the grace of the Almighty, we cordially invite you to celebrate the union of Ganesh and Deepika.",
     eventScheduleTitle: "Event Schedule & Timings",
     receptionTitle: "Reception",
     receptionDate: "Saturday, Aug 22nd, 2026",
     receptionTime: "7:00 PM Onwards",
-    receptionDesc: "Join us for an evening of celebration, dinner, and dancing as we kick off the festivities.",
+    receptionDesc:
+      "Join us for an evening of celebration, dinner, and dancing as we kick off the festivities.",
     knotTitle: "The Knot (Muhurtham)",
     knotDate: "Sunday, Aug 23rd, 2026",
-    knotTime: "8:15 AM Muhurtham",
-    knotDesc: "Witness the sacred ceremony as we exchange vows and begin our new journey together.",
+    knotTime: "4:30 AM Muhurtham",
+    knotDesc:
+      "Witness the sacred ceremony as we exchange vows and begin our new journey together.",
     venueTitle: "The Venue",
-    venueSubtitle: "We look forward to welcoming you to celebrate with us at this beautiful location.",
+    venueSubtitle:
+      "We look forward to welcoming you to celebrate with us at this beautiful location.",
     venueName: "PGR Function hall",
     venueAddress: "Bypass Link road, Pamidi, Anantapur, Andhra Pradesh",
     getDirections: "Get Directions",
@@ -77,6 +86,7 @@ export const translations = {
     ghibliBadge: "Wedding Portrait",
     ghibliCaption: "Ganesh & Deepika - A Match Made in Heaven",
     eventTimingsCardTitle: "Event Schedule & Timings Summary",
-    eventTimingsCardSubtitle: "We request your gracious presence on time to bless the couple"
-  }
+    eventTimingsCardSubtitle:
+      "We request your gracious presence on time to bless the couple",
+  },
 };
