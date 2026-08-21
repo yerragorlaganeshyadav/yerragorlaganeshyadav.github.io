@@ -11,7 +11,7 @@ import {
   FaPhoneAlt,
   FaClock,
   FaCalendarCheck,
-  FaEnvelope
+  FaEnvelope,
 } from "react-icons/fa";
 import { translations } from "./GaneshDeepika/translations";
 
@@ -25,12 +25,12 @@ const GaneshDeepikaWedding = () => {
   const t = translations[lang];
 
   // Countdown timer to Muhurtham (Aug 23, 2026, 08:15 AM IST)
-  const targetDate = new Date("2026-08-23T08:15:00+05:30").getTime();
+  const targetDate = new Date("2026-08-23T04:30:00+05:30").getTime();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     mins: 0,
-    secs: 0
+    secs: 0,
   });
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const GaneshDeepikaWedding = () => {
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
           mins: Math.floor((difference / 1000 / 60) % 60),
-          secs: Math.floor((difference / 1000) % 60)
+          secs: Math.floor((difference / 1000) % 60),
         });
       } else {
         setTimeLeft({ days: 0, hours: 0, mins: 0, secs: 0 });
@@ -137,7 +137,10 @@ const GaneshDeepikaWedding = () => {
       </header>
 
       {/* Hero Section with Wedding Mandap Banner */}
-      <section id="top" className="relative min-h-[85vh] flex items-center justify-center text-center px-4 py-16 overflow-hidden">
+      <section
+        id="top"
+        className="relative min-h-[85vh] flex items-center justify-center text-center px-4 py-16 overflow-hidden"
+      >
         {/* Mandap Background Image with Subtle Parallax Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -188,7 +191,10 @@ const GaneshDeepikaWedding = () => {
       </section>
 
       {/* Original Wedding Couple Portrait Section */}
-      <section id="story" className="py-16 px-4 bg-gradient-to-b from-[#FAF7F2] to-[#F4EFE6] border-y border-[#E6C280]/20">
+      <section
+        id="story"
+        className="py-16 px-4 bg-gradient-to-b from-[#FAF7F2] to-[#F4EFE6] border-y border-[#E6C280]/20"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#4A0E17]/10 text-[#4A0E17] px-4 py-1.5 rounded-full text-xs font-sans font-bold tracking-wider mb-4 border border-[#4A0E17]/20">
             <span>✨ {t.ghibliBadge}</span>
@@ -562,7 +568,8 @@ const GaneshDeepikaWedding = () => {
               {t.contactUs}
             </h3>
             <p className="text-sm font-wedding text-gray-700 mb-6">
-              For any queries or assistance regarding the venue or wedding arrangements, please contact us:
+              For any queries or assistance regarding the venue or wedding
+              arrangements, please contact us:
             </p>
             <div className="bg-white p-4 rounded-xl border border-[#E6C280] space-y-3 text-left">
               <div className="flex items-center gap-3 text-sm text-[#4A0E17]">
@@ -598,7 +605,9 @@ const GaneshDeepikaWedding = () => {
               {t.privacyPolicy}
             </h3>
             <p className="text-sm font-wedding text-gray-700 leading-relaxed">
-              We respect your privacy. Any inquiries or messages sent regarding the Ganesh & Deepika wedding celebration are handled with care and confidentiality.
+              We respect your privacy. Any inquiries or messages sent regarding
+              the Ganesh & Deepika wedding celebration are handled with care and
+              confidentiality.
             </p>
             <button
               onClick={() => setShowPrivacyModal(false)}
